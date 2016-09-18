@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>首页</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta content="telephone=no" name="format-detection">
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+</head>
+<style>
+    .header_nav{text-align: center;border-bottom: 1px solid #efefef;}
+    .header_nav li{display: inline-block;width:32px;line-height:45px;margin:0 20px;}
+    .header_nav .active{color:#3caf33;border-bottom: 2px solid #3caf33;}
+    .header_all{text-align: center;color:#888;position: relative;}
+    .header_all:after{content:"";width:1px;height:23px;background-color:#ccc;position:absolute;left:50%;top:10px}
+    .header_all p{display:inline-block;line-height:46px;}
+    .header_all p>span{vertical-align:baseline;}
+    .panel{width:220px;height:100%;padding:20px;background-color: #606060;text-align: center;position:fixed;left:-260px;top:0}
+    .person_pic img{width:70px;height:70px;margin-bottom: 20px}
+    .person_renzheng{margin-bottom: 20px;}
+    .person_renzheng span{vertical-align: baseline;}
+    .person_setlist{text-align: left;margin-left:40px;line-height:50px;margin-top: 40px;margin-bottom: 140px}
+    .person_setlist span{vertical-align: baseline;}
+    .person_about{position: relative;}
+    .person_about:after{content:"";width:1px;height:15px;background-color:#bebebe; position:absolute;left:50%;top:3px;}
+    .person_about a{color:#bebebe;margin:0 10px}
+    #main{position:fixed;left:0;top:0;width:100%}
+</style>
+<body>
+<!--头部-->
+<div id="main">
+    <header class="bgWhite" style="line-height:48px;">
+        <a id="left-panel-link" href="#left-panel">
+            <span class="icon icon-fangxiangpan size30" style="color:#a4a1a1;margin-left:10px"></span>
+        </a>
+        <span class="fd_header_title size16" style="color:#f3f3f3">飞单</span>
+        <div class="index_messageR fr">
+            <a href="javascript:;">
+                <i class="icon icon-xiaoxi cgreen size20"></i>
+            </a>
+            <span class="redPoint"></span>
+        </div>
+        <ul class="header_nav size16">
+            <li>空箱</li>
+            <li class="active">门点</li>
+            <li>散货</li>
+        </ul>
+        <div class="header_all size16">
+            <p style="margin-right:45px;">
+                <span class="icon icon-rili size20" style="margin-right:10px"></span>
+                <span>所有时间</span>
+            </p>
+            <p style="margin-left:45px;">
+                <span class="icon icon-dingwei size20" style="margin-right:10px"></span>
+                <span>所有流向</span>
+            </p>
+        </div>
+    </header>
+</div>
+<!--个人中心-->
+<aside id="left-panel" class="panel cWhite">
+    <div class="person_pic">
+        <img src="images/person.png" alt="默认头像" class="person">
+    </div>
+    <div class="person_renzheng size16">
+        <span class="icon icon-renzheng size18"></span>
+        <span class="cgreen">去认证</span>
+        <span class="icon icon-go cgreen"></span>
+    </div>
+    <p class="size14" style="color:#9d9d9d">去认证，做个有身份的司机！</p>
+    <ul class="person_setlist cWhite size14">
+        <li>
+            <a href="javascript:;" class="cWhite size14">
+                <span class="icon icon-wancheng size16" style="margin-right:15px"></span>
+                <span>完成的订单</span>
+            </a>
+        </li>
+        <li>
+            <a href="javascript:;" class="cWhite size14">
+                <span class="icon icon-dianhua size16" style="margin-right:15px"></span>
+                <span>更换登录手机号</span>
+            </a>
+        </li>
+        <li>
+            <a href="javascript:;" class="cWhite size14">
+                <span class="icon icon-fankui size16" style="margin-right:15px"></span>
+                <span>修改密码</span>
+            </a>
+        </li>
+    </ul>
+    <div class="person_about">
+        <a href="#" class="size14">关于我们</a>
+        <a href="#" class="size14">联系客服</a>
+    </div>
+</aside>
+<script src="js/jquery-3.1.0.min.js"></script>
+<script>
+    $(function () {
+        var target=false;
+            $("#left-panel-link").click(function () {
+                if(!target){
+                    $("#left-panel").animate({left:"0px"});
+                    $("#main").animate({left:"260px"});
+                    target=true;
+                }else {
+                    $("#left-panel").animate({left: "-260px"});
+                    $("#main").animate({left: "0px"});
+                    target = false;
+                }
+            });
+    })
+</script>
+</body>
+</html>
